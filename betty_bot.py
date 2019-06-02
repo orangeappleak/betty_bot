@@ -28,4 +28,4 @@ if __name__ == '__main__':
         except Exception as error:
             print('{} cannot be loaded due to,[{}]'.format(extension,error))
 
-    client.run(os.environ.get('TOKEn'))
+    client.run(os.environ.get('TOKEN'))
