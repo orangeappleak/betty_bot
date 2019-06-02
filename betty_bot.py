@@ -4,7 +4,7 @@ from discord.ext import commands
 import random
 import os
 
-extensions = ['mysql','errors','wikipedia','face_recog']
+extensions = ['mysql','errors','wikipedia']
 client = commands.Bot("#")
 
 @client.command(aliases = ['hi','hey','wassup','how you doing'])
