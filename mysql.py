@@ -12,7 +12,7 @@ class mysql(commands.Cog):
     @commands.command()
     async def register(self,ctx):
         try:
-            conn=await aiomysql.connect(host="localhost",user="root",password="karthik.123",db="discord")
+            conn=await aiomysql.connect(host="127.0.0.1",user="root",password="karthik.123",db="discord")
             async with conn.cursor() as curr:
                 user = str(ctx.message.author)
                 id=user.split("#")
