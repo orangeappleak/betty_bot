@@ -5,8 +5,6 @@ import aiohttp
 import requests
 from bs4 import BeautifulSoup
 
-loop = asyncio.get_event_loop()
-
 class wikipedia(commands.Cog):
     def __init__(self,client):
         self.client=client
