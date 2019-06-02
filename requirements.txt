@@ -2,7 +2,6 @@ aiohttp==3.4.4
 async-timeout==3.0.1
 aiomysql==0.0.20
 beautifulsoup4==4.7.1
-mysql-connector-py==8.0.16
 boto==2.48.0
 certifi==2019.3.9
 chardet==3.0.4
