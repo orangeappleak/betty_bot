@@ -1,1 +1,1 @@
-worker: py betty_bot.py
+worker: python betty_bot.py
