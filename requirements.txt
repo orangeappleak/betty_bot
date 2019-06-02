@@ -13,3 +13,4 @@ virtualenv==16.0.0
 virtualenv-clone==0.3.0
 websockets==6.0
 youtube-dl==2018.06.11
+requests==2.22.0
