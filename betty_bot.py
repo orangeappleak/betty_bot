@@ -72,7 +72,7 @@ async def create_channel(ctx,name,type):
     except Exception as error:
         print(error)
  
-client.command(pass_context=True)
+@client.command(pass_context=True)
 async def permissions(ctx,role:discord.Role):
     permission_embed=discord.Embed(title="the current permissions for {} are:".format(role.name),color=discord.Colour.orange())
     for permission in role.permissions:
