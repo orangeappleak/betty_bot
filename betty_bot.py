@@ -49,7 +49,7 @@ async def profile(ctx,member:discord.Member):
         iembed.add_field(name="User_id->",value=member.id)
         iembed.add_field(name="User_status->",value=member.status)
         for i in range(len(r)):
-            iembed.add_field(name="User_role:%d->" % i+1,value=r[i],inline=False)
+            iembed.add_field(name="User_role:%s->" % str(i+1),value=r[i],inline=False)
         iembed.add_field(name="Member of the server from->",value=member.joined_at)
         iembed.set_author(name=member.name,icon_url=member.avatar_url)
         iembed.set_thumbnail(url=member.avatar_url)
