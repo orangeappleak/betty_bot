@@ -22,13 +22,13 @@ async def help(ctx):
         help_embed.add_field(name="hello->",value="Greets the user back")
         help_embed.add_field(name="wiki [search string]->",value="extracts data from wikipedia based on the entered search string")
         help_embed.add_field(name="register->",value="registers the author's name into the database")
-        help_embed.add_field(name="(admin_command) create_channel [name][category][type]->",value="creates a text or a voice channel based on the given parameters")
+        help_embed.add_field(name="(admin_command) create_channel [name][type]->",value="creates a text or a voice channel based on the given parameters")
         help_embed.add_field(name="profile [user_name]->",value="provides information based on the given user_name")
         help_embed.add_field(name="permissions [role]->",value="gives the list of permissions for the specified role")
         help_embed.add_field(name="roles->",value="lists all the roles for the server")
         help_embed.add_field(name="role [user_name]->",value="lists the roles assigned to the user_name")
         help_embed.add_field(name="(admin_command) kick [member]->",value="kicks the specified user from the server")
-        help_embed.add_field(name="(admin_command) delete_messages->",value="deleted 100 recent messages from the channel")
+        help_embed.add_field(name="(admin_command) delete_messages->",value="deletes 100 recent messages from the channel")
         help_embed.set_footer(text="NOTE->DONT FORGET TO ADD THE BOT_PREFIX[#] BEFORE THE COMMAND")
         await ctx.message.channel.send(embed=help_embed)
     except Exception as error:
@@ -58,11 +58,11 @@ async def profile(ctx,member:discord.Member):
         print(error)
         
 @client.command(pass_context=True)
-async def create_channel(ctx,name,category,type):
+async def create_channel(ctx,name,type):
     try:
         if 'admin' in (role.name for role in ctx.message.author.roles):
             if type == 'text':
-                await ctx.message.channel.category.guild.create_text_channel(name=name,category=category)
+                await ctx.message.channel.category.guild.create_text_channel(name=name)
                 await ctx.message.channel.send("The text channel named {} has been created successfully".format(name))
             elif type == 'voice':
                 await ctx.message.channel.category.guild.create_voice_channel(name=name)
