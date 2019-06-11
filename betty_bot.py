@@ -6,6 +6,7 @@ import os
 
 extensions = ['errors','wikipedia']
 client = commands.Bot("#")
+client.remove_command('help')
 
 @client.command(aliases = ['hi','hey','wassup','how you doing'])
 async def hello(ctx):
@@ -32,7 +33,11 @@ async def help(ctx):
         await ctx.message.channel.send(embed=help_embed)
     except Exception as error:
         print(error)
-        
+ 
+@client.command()
+async def running(ctx):
+    await ctx.message.channel.send("running 24/7 on heroku")
+   
 @client.command()
 async def profile(ctx,member:discord.Member):
     try:
@@ -134,8 +139,10 @@ async def relation(ctx):
 
 @client.event
 async def on_ready():
+    game=discord.Game("running on heroku")
+    await client.change_presence(status=discord.Status.online,activity=game)
     print("Working as {}".format(client.user.name))
-
+    
 if __name__ == '__main__':
     for extension in extensions:
         try:
